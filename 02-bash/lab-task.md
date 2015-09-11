@@ -72,7 +72,7 @@ done
 
 ```
 mv reallylongfilename_reallyreallylong_iamnotkidding.txt reallylongfilename_reallyreallylong_iamnotkidding.old
-# mv reallylongfilename_reallyreallylong_iamnotkidding.{txt,old}
+<!-- # mv reallylongfilename_reallyreallylong_iamnotkidding.{txt,old} -->
 ```
 
 ```
