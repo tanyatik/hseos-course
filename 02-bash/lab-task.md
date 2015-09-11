@@ -72,18 +72,18 @@ done
 
 ```
 mv reallylongfilename_reallyreallylong_iamnotkidding.txt reallylongfilename_reallyreallylong_iamnotkidding.old
-<!-- # mv reallylongfilename_reallyreallylong_iamnotkidding.{txt,old} -->
 ```
+<!-- # mv reallylongfilename_reallyreallylong_iamnotkidding.{txt,old} -->
 
 ```
 cd /home/myuser
-# cd
 ```
+<!-- # cd -->
 
 ```
 rm film.avi film.avi.part01 film.avi.part02 film.avi.part03
-# rm file.avi*
 ```
+<!-- # rm file.avi* -->
 
 ```
 mkdir src
@@ -92,36 +92,37 @@ mkdir src/myproject/java
 mkdir src/myproject/java/com
 mkdir src/myproject/java/com/hse
 mkdir src/myproject/java/com/hse/myproject
-# mkdir -p src/myproject/java/com/hse/myproject
 ```
+<!-- # mkdir -p src/myproject/java/com/hse/myproject -->
 
 ```
 cat /tmp/myfile | grep "mystring"  # Useless Use of Cat Award
-# grep mystring /tmp/myfile
 ```
+<!-- # grep mystring /tmp/myfile -->
 
 ### 8. Что делают эти однострочники? Как можно переписать их в более короткой форме?
 
 ```
-ls | grep "[.]txt$"  # ls *.txt
+ls | grep "[.]txt$"
 ```
+<!--  # ls *.txt -->
 
 ```
 (cd /tmp && ls)
-# ls /tmp
 ```
+<!-- # ls /tmp -->
 
 ```
 for file in $(ls); do ./process.sh $file; done
-# ls | xargs ./process.sh
 ```
+<!-- # ls | xargs ./process.sh -->
 
 ```
 find . -type f -iname '*.txt' -maxdepth 1 | xargs sed 's/ /\n/g' | grep -v "^$" | wc -l
-# cat *.txt | wc -w
 ```
+<!-- # cat *.txt | wc -w -->
 
 ```
 sort file1 > tmp1 && sort file2 > tmp2 && diff tmp1 tmp2 && rm tmp1 tmp2
-# diff <(sort file1) <(sort file2)
 ```
+<!-- # diff <(sort file1) <(sort file2) -->
