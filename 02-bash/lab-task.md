@@ -20,7 +20,15 @@ echo $@
 
 ### 3. Скачивание
 
-Написать скрипт, скачивающий файл если он еще не скачан. Имя файла и url должны быть в переменных FILE, URL.
+Написать скрипт, скачивающий файл если он еще не скачан. Имя файла и url должны быть экспортированы в переменных FILE, URL.
+
+Если скрипт называется `downloader.sh`, то **запускать** ваш скрипт вы должны так:
+
+```
+export FILE=yandex.html
+export URL=http://ya.ru
+./downloader.sh
+```
 
 <!---
 ```
@@ -41,6 +49,16 @@ fi
 
 Пример запуска: `watch.sh ls -lah`.
 При запуске без аргументов должен выводиться usage.
+
+**Note**. usage --- строка, объясняющая, как использовать программу. Пример usage можно увидеть, если запустить команду `grep` без аргументов:
+
+```
+➜  ~  grep
+usage: grep [-abcDEFGHhIiJLlmnOoqRSsUVvwxZ] [-A num] [-B num] [-C[num]]
+	[-e pattern] [-f file] [--binary-files=value] [--color=when]
+	[--context[=num]] [--directories=action] [--label] [--line-buffered]
+	[--null] [pattern] [file ...]
+```
 
 <!--
 ```
@@ -84,6 +102,8 @@ mv reallylongfilename_reallyreallylong_iamnotkidding.txt reallylongfilename_real
 ```
 <!-- # mv reallylongfilename_reallyreallylong_iamnotkidding.{txt,old} -->
 
+**Note**. Хотелось бы печатать `really...kidding` только один раз.
+
 ```
 cd /home/myuser
 ```
@@ -92,6 +112,8 @@ cd /home/myuser
 ```
 rm film.avi film.avi.part01 film.avi.part02 film.avi.part03
 ```
+**Note**. Других файлов с расширением `.avi` в папке нет.
+
 <!-- # rm file.avi* -->
 
 ```
@@ -107,6 +129,9 @@ mkdir src/myproject/java/com/hse/myproject
 ```
 cat /tmp/myfile | grep "mystring"  # Useless Use of Cat Award
 ```
+
+**Note**. Можно ли обойтись одной командой (а не двумя, как сейчас)?
+
 <!-- # grep mystring /tmp/myfile -->
 
 ### 8. Что делают эти однострочники? 
@@ -126,6 +151,7 @@ ls | grep "[.]txt$"
 ```
 for file in $(ls); do ./process.sh $file; done
 ```
+**Note**. man xargs
 <!-- # ls | xargs ./process.sh -->
 
 ```
